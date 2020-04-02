@@ -299,9 +299,9 @@ module DiscourseFrotz
       end
 
       if save_location.blank?
-        output, s = Open3.capture2("#{SiteSetting.frotz_dumb_executable_directory}/./dfrotz -f ansi -i -Z 0 #{story_path}", :stdin_data=>input_data, :binmode=>true )
+        output, s = Open3.capture2("#{SiteSetting.frotz_dumb_executable_directory}/./dfrotz -m -f ansi -i -Z 0 #{story_path}", :stdin_data=>input_data, :binmode=>true )
       else
-        output, s = Open3.capture2("#{SiteSetting.frotz_dumb_executable_directory}/./dfrotz -L #{save_location} -f ansi -i -Z 0 #{story_path}", :stdin_data=>input_data, :binmode=>true )
+        output, s = Open3.capture2("#{SiteSetting.frotz_dumb_executable_directory}/./dfrotz -L #{save_location} -m -f ansi -i -Z 0 #{story_path}", :stdin_data=>input_data, :binmode=>true )
       end
 
       puts "BEFORE strip:\n"+output
